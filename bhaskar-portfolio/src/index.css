@@ -1,0 +1,22 @@
+/*
+  src/index.css
+  -----------------------------------------------------------------------
+  Global stylesheet. Pulls in Tailwind's base/components/utilities layers.
+  Add any truly global, non-Tailwind CSS below the directives.
+  -----------------------------------------------------------------------
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Small utility for line-clamping card text without a plugin */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
