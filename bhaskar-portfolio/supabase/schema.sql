@@ -57,13 +57,19 @@ returns trigger
 language plpgsql
 security definer set search_path = public
 as $$
+declare
+  -- Change this email if you ever want a different admin account
+  admin_email text := 'modithalekkala24@gmail.com';
 begin
   insert into public.profiles (id, full_name, email, role)
   values (
     new.id,
     coalesce(new.raw_user_meta_data ->> 'full_name', ''),
     new.email,
-    'customer'
+    case
+      when lower(new.email) = lower(admin_email) then 'admin'
+      else 'customer'
+    end
   );
   return new;
 end;

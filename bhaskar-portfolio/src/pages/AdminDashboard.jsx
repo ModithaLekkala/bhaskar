@@ -18,7 +18,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-2xl font-bold mb-1">Admin Dashboard</h1>
+      <h1 className="text-2xl font-bold mb-1">Welcome, Bhaskar 👋</h1>
       <p className="text-slate-500 dark:text-slate-400 mb-8">
         Manage customer portfolios, subscribers, and send updates.
       </p>

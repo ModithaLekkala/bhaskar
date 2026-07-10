@@ -40,18 +40,19 @@ export default function Navbar() {
             </>
           )}
 
-          {user && role === 'customer' && (
-            <>
-              <Link to="/dashboard" className="text-sm font-medium hover:text-brand-600">Dashboard</Link>
-              <button onClick={handleLogout} className="text-sm font-medium hover:text-brand-600">Logout</button>
-            </>
-          )}
-
-          {user && role === 'admin' && (
-            <>
-              <Link to="/admin" className="text-sm font-medium hover:text-brand-600">Admin</Link>
-              <button onClick={handleLogout} className="text-sm font-medium hover:text-brand-600">Logout</button>
-            </>
+          {user && (
+            <div className="flex items-center gap-3">
+              <Link to={role === 'admin' ? '/admin' : '/dashboard'} className="text-sm font-medium hover:text-brand-600">
+                {role === 'admin' ? 'Admin' : 'Dashboard'}
+              </Link>
+              <span className="text-xs text-slate-400 hidden sm:inline">{user.email}</span>
+              <button
+                onClick={handleLogout}
+                className="text-sm font-medium px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800"
+              >
+                Log out
+              </button>
+            </div>
           )}
 
           <ThemeToggle />

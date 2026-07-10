@@ -107,7 +107,7 @@ async function sendEmail(to: string, subject: string, body: string) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Bhaskar Kanderi <club@yourdomain.com>', // must be a verified sender in Resend
+      from: 'onboarding@resend.dev', // must be a verified sender in Resend
       to,
       subject,
       text: body,
